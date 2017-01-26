@@ -1,5 +1,6 @@
 package com.samsolutions.norka.statistics;
 
+import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentSkipListMap;
@@ -10,6 +11,11 @@ import java.util.concurrent.ConcurrentSkipListMap;
 public class Statistic {
 
     private final static int MAX_COUNT_OF_SHOWING_ELEMENTS = 3;
+
+    class Info {
+        String beanName;
+        LocalDateTime localDateTime;
+    }
 
     ConcurrentSkipListMap<Long, String> tree;
 

@@ -4,12 +4,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import javax.annotation.PostConstruct;
+
 /**
  * Created by dznor on 25.01.2017.
  */
 
 @Configuration
-@ComponentScan
+//@ComponentScan(basePackages = "com.samsolutions.norka.statistics")
 public class SpringConfig {
 
     @Bean(name = "traceableImplStub")
@@ -23,7 +25,13 @@ public class SpringConfig {
     }
 
     @Bean(name = "traceableProxy")
+//    @PostConstruct
     public Traceable getTraceableProxy() {
         return new TraceableProxy(getTraceableImplStub(), getStaticsticBean());
+    }
+
+    @Bean(name = "traceablePostProcessor")
+    public TraceablePostProcessor getTraceablePostProcessor() {
+        return new TraceablePostProcessor();
     }
 }

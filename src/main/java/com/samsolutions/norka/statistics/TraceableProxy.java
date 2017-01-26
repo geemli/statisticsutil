@@ -1,5 +1,8 @@
 package com.samsolutions.norka.statistics;
 
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanPostProcessor;
+
 /**
  * Created by dznor on 25.01.2017.
  */

@@ -19,11 +19,13 @@ public class TraceableImplStub implements Traceable<Integer> {
     }
 
     public void doBusinessLogic(Integer integer) {
-        System.out.println("doBusinessLogic sleeps " + sleep());
+        long delay = sleep();
+        System.out.println("doBusinessLogic sleeps " + delay);
     }
 
     public Integer calculateBusinessValue() {
-        System.out.println("calculateBusinessValue sleeps " + sleep());
+        long delay = sleep();
+        System.out.println("calculateBusinessValue sleeps " + delay);
         return 10;
     }
 
