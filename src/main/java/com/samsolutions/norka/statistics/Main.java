@@ -16,6 +16,9 @@ public class Main {
         ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
         Traceable obj = (TraceableProxy) context.getBean("traceableProxy");
         Statistic statistic = (Statistic) context.getBean("statistic");
+        statistic.addValue(1l, "a");
+        statistic.addValue(1l, "b");
+        statistic.addValue(1l, "c");
         obj.calculateBusinessValue();
         obj.calculateBusinessValue();
         obj.calculateBusinessValue();
